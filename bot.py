@@ -70,6 +70,18 @@ async def poll(ctx, question: str):
     await message.add_reaction("👍")
     await message.add_reaction("👎")
 
+
+#help command
+@bot.command()
+async def comhelp(ctx):
+    embed2 = discord.Embed(title="Commands", description="Here are the avaliable commands",color=discord.Color.red())
+    embed2.add_field(name="!hello", value="Greets the user", inline=False)
+    embed2.add_field(name="!poll <question>", value="Creates a poll with Yes/No options", inline=False)
+    embed2.add_field(name="!roll <min> <max>", value="Rolls a random number between min and max", inline=False)
+
+    await ctx.send(embed=embed2)
+
+
 # Run the bot with your token
 token = os.getenv('DISCORD_TOKEN')
 bot.run(token)
