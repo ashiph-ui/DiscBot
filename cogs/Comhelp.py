@@ -12,6 +12,9 @@ class Comhelp(commands.Cog):
         embed2.add_field(name="!hello", value="Greets the user", inline=False)
         embed2.add_field(name="!poll <question>", value="Creates a poll with Yes/No options", inline=False)
         embed2.add_field(name="!roll <min> <max>", value="Rolls a random number between min and max", inline=False)
+        embed2.add_field(name="!pickgame <game> <game>...", value="Picks a game out of the options you give.", inline=False)
+        embed2.add_field(name="!addstreamer <streamer>", value="adds a streamer for the B-A-B data base and notifys you when online", inline=False)
+        embed2.add_field(name="!removestreamer <streamer>", value="removes a streamer from the B-A-B data base", inline=False)
 
         await ctx.send(embed=embed2)
 
