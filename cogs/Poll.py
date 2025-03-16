@@ -7,7 +7,7 @@ class Poll(commands.Cog):
 
     @commands.command()
     async def poll(self,ctx, question: str):
-        embed = discord.Embed(title="Poll", description=question, color=discord.Color.purple())
+        embed = discord.Embed(title=question, color=discord.Color.purple())
         embed.add_field(name="React with 👍 for Yes", value="React with 👎 for No")
         
         # Send the poll and mention the author
