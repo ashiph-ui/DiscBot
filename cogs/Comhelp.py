@@ -10,7 +10,7 @@ class Comhelp(commands.Cog):
     async def comhelp(self, ctx):
         embed2 = discord.Embed(title="Commands", description="Here are the avaliable commands",color=discord.Color.red())
         embed2.add_field(name="!hello", value="Greets the user", inline=False)
-        embed2.add_field(name="!poll <question>", value="Creates a poll with Yes/No options", inline=False)
+        embed2.add_field(name="!poll <\"question\">", value="Creates a poll with Yes/No options", inline=False)
         embed2.add_field(name="!roll <min> <max>", value="Rolls a random number between min and max", inline=False)
         embed2.add_field(name="!pickgame <game> <game>...", value="Picks a game out of the options you give.", inline=False)
         embed2.add_field(name="!addstreamer <streamer>", value="adds a streamer for the B-A-B data base and notifys you when online", inline=False)
