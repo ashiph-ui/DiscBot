@@ -22,6 +22,7 @@ async def on_ready():
 async def hello(ctx):
     await ctx.send(f"I heard, {ctx.author.mention} is gey!")
 
+# command: respond to "!roll number number"
 @bot.command()
 async def roll(ctx, min: int, max: int):
     number = random.randint(min, max)
