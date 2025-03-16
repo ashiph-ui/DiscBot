@@ -56,6 +56,20 @@ async def roll_error(ctx, error):
     else:
         await ctx.send("❌ An unexpected error occurred!")
 
+
+#poll command
+@bot.command()
+async def poll(ctx, question: str):
+    embed = discord.Embed(title="Poll", description=question, color=discord.Color.purple())
+    embed.add_field(name="React with 👍 for Yes", value="React with 👎 for No")
+    
+    # Send the poll and mention the author
+    message = await ctx.send(f"{ctx.author.mention}", embed=embed)
+    
+    # Add reaction options
+    await message.add_reaction("👍")
+    await message.add_reaction("👎")
+
 # Run the bot with your token
 token = os.getenv('DISCORD_TOKEN')
 bot.run(token)
