@@ -19,12 +19,8 @@ async def on_ready():
 # Command: Respond to "!hello"
 @bot.command()
 async def hello(ctx):
-    await ctx.send(f"Hello, {ctx.author.mention}!")
+    await ctx.send(f"I heard, {ctx.author.mention} is gey!")
 
 # Run the bot with your token
 token = os.getenv('DISCORD_TOKEN')
 bot.run(token)
-
-@bot.command()
-async def hello(ctx):
-    await ctx.send(f"I heard, {ctx.author.mention} is gey")
