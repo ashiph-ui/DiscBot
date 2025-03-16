@@ -14,7 +14,7 @@ TWITCH_STREAMS_URL = 'https://api.twitch.tv/helix/streams'
 class TwitchNotifier(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.streamers = {}  # Store streamers and their live status
+        self.streamers = {"101KIRA": False, "vFloat": False}  # Store streamers and their live status
         self.check_streamers.start()  # Start the background task
 
     def cog_unload(self):
@@ -77,6 +77,9 @@ class TwitchNotifier(commands.Cog):
                     await channel.send(f'@everyone {streamer} is now live! https://twitch.tv/{streamer}')
             else:
                 self.streamers[streamer] = False
+                print(f"Streamer {streamer} is not live")
+
+        print("1 minute routine done\n -------------------------")
 
     @check_streamers.before_loop
     async def before_check_streamers(self):
