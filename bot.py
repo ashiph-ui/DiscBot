@@ -24,3 +24,7 @@ async def hello(ctx):
 # Run the bot with your token
 token = os.getenv('DISCORD_TOKEN')
 bot.run(token)
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f"I heard, {ctx.author.mention} is gey")
