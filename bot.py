@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+import random
 
 # Load environment variables FIRST
 load_dotenv()
@@ -20,6 +21,11 @@ async def on_ready():
 @bot.command()
 async def hello(ctx):
     await ctx.send(f"I heard, {ctx.author.mention} is gey!")
+
+@bot.command()
+async def roll(ctx, min: int, max: int):
+    number = random.randint(min, max)
+    await ctx.send(f"{ctx.author.mention} rolled a {number}!")
 
 # Run the bot with your token
 token = os.getenv('DISCORD_TOKEN')
