@@ -64,7 +64,7 @@ async def poll(ctx, question: str):
     embed.add_field(name="React with 👍 for Yes", value="React with 👎 for No")
     
     # Send the poll and mention the author
-    message = await ctx.send(f"{ctx.author.mention}", embed=embed)
+    message = await ctx.send(f"@everyone", embed=embed)
     
     # Add reaction options
     await message.add_reaction("👍")
