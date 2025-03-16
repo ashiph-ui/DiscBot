@@ -40,6 +40,7 @@ class TwitchNotifier(commands.Cog):
             'user_login': streamer_name
         }
         response = requests.get(TWITCH_STREAMS_URL, headers=headers, params=params)
+        print(f'Status code: {response.status_code}, ready to check')  # Add this line to print the status code of the response (response.status_code)
         data = response.json()
         return len(data['data']) > 0
 
@@ -65,11 +66,14 @@ class TwitchNotifier(commands.Cog):
     async def check_streamers(self):
         """Background task to check if streamers are live."""
         token = self.get_twitch_token()
+        print("Checking Streamers")
         for streamer in self.streamers:
+            print(f"Checking {streamer}")
             if self.is_streamer_live(streamer, token):
                 if not self.streamers[streamer]:
                     self.streamers[streamer] = True
                     channel = self.bot.get_channel(1314340188226584718)  # Replace with your channel ID
+                    print(f"Found live streamer: {streamer}, SENDING NOTIFICATION")
                     await channel.send(f'@everyone {streamer} is now live! https://twitch.tv/{streamer}')
             else:
                 self.streamers[streamer] = False
