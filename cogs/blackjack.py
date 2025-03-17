@@ -20,7 +20,7 @@ def calculate_hand_value(hand):
     value = 0 
     aces = 0
     for card in hand:
-        card_name = card.split([card_name]) # tis will get the card name
+        card_name = card.split()[0] # tis will get the card name
         if card_name == "A":
             aces += 1
     while value > 21 and aces:#this will change the value of the ace to 1 if the value goes over 21.
