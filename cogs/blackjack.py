@@ -120,3 +120,10 @@ class blackjack(commands.Cog):
 # Required setup function to load the cog into the bot
 async def setup(bot):
     await bot.add_cog(blackjack(bot))
+
+
+
+#notes to make the code better:
+#add embeddes to the returns so it looks better 
+#learn to implement pictues of the cards to the game
+#add a money system
