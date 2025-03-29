@@ -14,7 +14,7 @@ TWITCH_STREAMS_URL = 'https://api.twitch.tv/helix/streams'
 class TwitchNotifier(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.streamers = {"101KIRA": False, "vFloat": False}  # Store streamers and their live status
+        self.streamers = {"101KIRA": False, "vFloat": False,"rayasainboy": False}  # Store streamers and their live status
         self.check_streamers.start()  # Start the background task
 
     def cog_unload(self):
